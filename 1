@@ -1,0 +1,75 @@
+#!/usr/bin/python
+
+import os, math, random, struct
+import numpy as np
+
+import matplotlib
+matplotlib.use('QT4Agg')
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+import matplotlib.mlab as mlab
+
+def corr_fct_with_fit(X, Y, dY, fitfunc, args, plotrange, label, pdfplot, logscale = 0):
+  print label
+
+  # plotting the data
+  l = plotrange[0]
+  u = plotrange[1]
+  p1 = plt.errorbar(X[l:u], Y[l:u], dY[l:u], fmt='x' + 'b', label = label[2])
+  # plotting the fit function
+  x1 = np.linspace(l, u, 1000)
+  y1 = []
+  for i in x1:
+    y1.append(fitfunc(args,i))
+  y1 = np.asarray(y1)
+  p2 = plt.plot(x1, y1, 'r', label = label[2])
+  # preparing the plot
+  plt.grid(True)
+  plt.xlabel(label[0])
+  plt.ylabel(label[1])
+  plt.legend(handles=[p1])
+  if logscale:
+    plt.yscale('log')
+  # save pdf
+  pdfplot.savefig()
+  plt.clf()
+
+#
+#def plot_results(X, mean, dof, fitparameter="none"):
+#  X_mean, X_stderr, X_median, X_up, X_lo = error_computation(X)
+#  X_sigma = 0.5*(X_up + X_lo)
+#  # plotting the results
+#  n, bins, patches = plt.hist(X, bins = 50, normed=1, histtype='stepfilled')
+#  plt.setp(patches, 'facecolor', 'g', 'alpha', 0.75)
+#  # plot gaussian distributions      
+#  x = np.linspace(X_mean-4*X_stderr, X_mean+4*X_stderr, 1000)
+#  p1, = plt.plot(x, chi2.pdf(x, dof), 'r')
+#  p2, = plt.plot(x, chi2.pdf(x, X_median), 'b')
+#  p3, = plt.plot(x, chi2.pdf(x, mean), 'g')
+#  plt.title(fitparameter)
+#  plt.grid(True)
+#  plt.legend([p1, p2, p3], ["mean, std", r'median, $1\sigma$', 'mean fit'])
+#  pdfplot.savefig()
+#  plt.clf()
+#
+#    plt.grid(True)
+#    x1 = np.linspace(lo, up, 1000)
+#    fitval = mean(results)
+#    y1 = []
+#    for i in x1:
+#      y1.append(fitval)
+#    y1 = np.asarray(y1, float)
+#    plt.plot(x1, y1, 'r')
+#    y1 = []
+#    for i in x1:
+#      y1.append(p[0])
+#    y1 = np.asarray(y1, float)
+#    plt.plot(x1, y1, 'g')
+#
+#    x = np.asarray(tt[5:up], float)
+#    y = np.asarray(val[5:up], float)
+#    error = np.asarray(sigma[5:up], float)
+#    plt.errorbar(x, y, error, fmt='x' + 'b')
+#    #plt.plot(x, y, 'r')
+#    pdfplot.savefig()
+#    plt.clf()

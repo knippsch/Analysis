@@ -60,11 +60,12 @@ def compute_derivative(boot):
   return derv, mean, err
 
 # computes the mean and the error, and writes both out
-def mean_error_print(boot):
+def mean_error_print(boot, write = 0):
   mean = np.mean(boot, axis=0)
   err  = np.std(boot, axis=0)
-  for t, m, e in zip(range(0, len(mean)), mean, err):
-    print t, m, e
+  if write:
+    for t, m, e in zip(range(0, len(mean)), mean, err):
+      print t, m, e
   return mean, err
 
 # compute the mean correlator with error
