@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
-import os, errno, math, random, struct
-from scipy.optimize import curve_fit
-from scipy.optimize import leastsq
+import math
 import numpy as np
 
 import boot
