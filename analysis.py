@@ -13,6 +13,7 @@ import boot
 import fit
 import IOcontraction
 import plot
+import zeta
 
 T = 64 # temporal extend of the lattice
 
@@ -46,11 +47,11 @@ for lo in range(12, 13):
   up = C2.shape[1] # fit includes last time slice
   t = np.asarray(tt[lo:up])
   print "\nResult from bootstrapsample fit in interval (2pt):", lo, up
-  res = fit.fitting(fitfunc1, t, C2[:,lo:up], [10., 0.19])
-  res_mean = np.mean(res, axis=0)
+  res_C2 = fit.fitting(fitfunc1, t, C2[:,lo:up], [14., 0.14])
+  res_C2_mean = np.mean(res_C2, axis=0)
   label = ['t', 'C2(t)', 'C2', '%.3f*cosh((%d-t)%.3f)' \
-           % (res_mean[0], T/2, res_mean[1])]
-  plot.corr_fct_with_fit(tt, C2_mean, C2_error, fitfunc1, res_mean, \
+           % (res_C2_mean[0], T/2, res_C2_mean[1])]
+  plot.corr_fct_with_fit(tt, C2_mean, C2_error, fitfunc1, res_C2_mean, \
                          [5., T/2+1], label, pdfplot, 1)
 
 # fitting the four-point function ##############################################
@@ -63,22 +64,37 @@ for lo in range(12, 13):
   up = C4.shape[1]
   t = np.asarray(tt[lo:up])
   print "\nResult from bootstrapsample fit in interval (2pt):", lo, up
-  res = fit.fitting(fitfunc1, t, C4[:,lo:up], [10., 0.19, 10.])
-  res_mean = np.mean(res, axis=0)
+  res_C4 = fit.fitting(fitfunc1, t, C4[:,lo:up], [160., 0.29, 10.])
+  res_C4_mean = np.mean(res_C4, axis=0)
   label = ['t', 'C4(t)', 'C4', '%.3f*cosh((%d-t)%.3f) + %.3f' \
-           % (res_mean[0], T/2, res_mean[1], res_mean[2])]
-  plot.corr_fct_with_fit(tt, C4_mean, C4_error, fitfunc1, res_mean, \
+           % (res_C4_mean[0], T/2, res_C4_mean[1], res_C4_mean[2])]
+  plot.corr_fct_with_fit(tt, C4_mean, C4_error, fitfunc1, res_C4_mean, \
                          [5., T/2+1], label, pdfplot, 1)
 pdfplot.close()
 
+L=32.
+m = res_C2[:,1]
+path = './bootdata/mass'
+IOcontraction.ensure_dir(path)
+np.save(path, m)
 
+E = res_C4[:,1]
+path = './bootdata/E'
+IOcontraction.ensure_dir(path)
+np.save(path, E)
 
+q2 = (E*E*0.25-m*m)*(L/(2.*math.pi))**2.
+path = './bootdata/q2'
+IOcontraction.ensure_dir(path)
+np.save(path, q2)
 
-
-
-
-
-
+Z = []
+for q, mm in zip(q2, m):
+  Z.append(zeta.Z(q))
+Z = np.asarray(Z)
+path = './bootdata/Z'
+IOcontraction.ensure_dir(path)
+np.save(path, Z)
 
 
 
