@@ -3,6 +3,8 @@
 import math, random
 import numpy as np
 
+import IOcontraction
+
 # bootstrapping
 def bootstrap(X, bootstrapsize):
   np.random.seed(1227)
@@ -16,7 +18,7 @@ def bootstrap(X, bootstrapsize):
   return boot
 
 # symmetrising and bootstrapping
-def sym_and_boot(X, T, nb_cfg, bootstrapsize = 1000):
+def sym_and_boot(X, T, nb_cfg, bootstrapsize = 1000, path = ''):
   boot = bootstrap(X[0:nb_cfg], bootstrapsize)
   for t in range(1, T/2):
     data = []
@@ -24,6 +26,10 @@ def sym_and_boot(X, T, nb_cfg, bootstrapsize = 1000):
       data.append( (a+b)/2.0)
     boot = np.c_[boot, bootstrap(data, bootstrapsize)]
   boot = np.c_[boot, bootstrap(X[(T/2)*nb_cfg:(T/2+1)*nb_cfg], bootstrapsize)]
+  # writing bootstrapsample to file
+  if len(path):
+    IOcontraction.ensure_dir(path)
+    np.save(path, boot)
   return boot
 
 # ratio computation
