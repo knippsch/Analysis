@@ -11,8 +11,8 @@ import matplotlib.mlab as mlab
 
 def corr_fct_with_fit(X, Y, dY, fitfunc, args, plotrange, label, pdfplot, logscale = 0):
   # plotting the data
-  l = plotrange[0]
-  u = plotrange[1]
+  l = int(plotrange[0])
+  u = int(plotrange[1])
   p1 = plt.errorbar(X[l:u], Y[l:u], dY[l:u], fmt='x' + 'b', label = label[3])
   # plotting the fit function
   x1 = np.linspace(l, u, 1000)
@@ -31,3 +31,17 @@ def corr_fct_with_fit(X, Y, dY, fitfunc, args, plotrange, label, pdfplot, logsca
   # save pdf
   pdfplot.savefig()
   plt.clf()
+
+
+# this can be used to plot the chisquare distribution of the fits
+#  x = np.linspace(scipy.stats.chi2.ppf(1e-6, dof), scipy.stats.chi2.ppf(1.-1e-6, dof), 1000)
+#  hist, bins = np.histogram(chisquare, 50, density=True)
+#  width = 0.7 * (bins[1] - bins[0])
+#  center = (bins[:-1] + bins[1:]) / 2
+#  plt.xlabel('x')
+#  plt.ylabel('chi^2(x)')
+#  plt.grid(True)
+#  plt.plot(x, scipy.stats.chi2.pdf(x, dof), 'r-', lw=2, alpha=1, label='chi2 pdf')
+#  plt.bar(center, hist, align='center', width=width)
+#  plt.show()
+

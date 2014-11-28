@@ -35,17 +35,14 @@ def sym_and_boot(X, T, nb_cfg, bootstrapsize = 1000, path = ''):
 # ratio computation
 def compute_ratio(C4, C2):
   print '\ncompute ratio:\n--------------\n' 
-  ratio,  sigma, val = [], [], []
-  for t in range(1, T/2-1):
-    for b in range(0, bootstrapsize):
-      a = (C4[t*bootstrapsize + b] - C4[(t+1)*bootstrapsize + b]) / \
-          ((C2[t*bootstrapsize + b])**2 - (C2[(t+1)*bootstrapsize + b])**2)
-      ratio.append(a)
-    print t, mean(ratio[(t-1)*bootstrapsize:(t)*bootstrapsize]), \
-                  std_error(ratio[(t-1)*bootstrapsize:(t)*bootstrapsize])
-    sigma.append(std_error(ratio[(t-1)*bootstrapsize:(t)*bootstrapsize]))
-    val.append(mean(ratio[(t-1)*bootstrapsize:(t)*bootstrapsize]))
-  return ratio, sigma, val
+  ratio = np.empty([C4.shape[0], C4.shape[1]-1], dtype=float)
+  for b in range(0, C4.shape[0]):
+    rowC2 = C2[b,:]
+    rowC4 = C4[b,:]
+    for t in range(0, len(rowC4)-1):
+      ratio[b, t] = (rowC4[t] - rowC4[t+1])/(rowC2[t]**2 - rowC2[t+1]**2)
+  mean, err = mean_error_print(ratio)
+  return ratio, mean, err
 
 # derivative
 def compute_derivative(boot):
@@ -55,7 +52,7 @@ def compute_derivative(boot):
   for b in range(0, boot.shape[0]):
     row = boot[b,:]
     for t in range(0, len(row)-1):
-      derv[b, t] = row[t+1] - row[t]
+      derv[b, t] = abs(row[t+1] - row[t])
   mean, err = mean_error_print(derv)
   return derv, mean, err
 

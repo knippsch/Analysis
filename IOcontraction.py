@@ -1,14 +1,46 @@
 #!/usr/bin/python
 
-import os, errno, struct
+import os, errno, struct, tarfile
 
 ################################################################################
-# extract a correlation function and resorts it
-def extract_corr_fct(name='', start_cfg=0, delta_cfg=0, nb_cfg=0, T=0, gamma=5,\
+#extract correlation function from tar file
+def extract_corr_tar(name_tar, name_file, cnfg_min, cnfg_max, cnfg_del, T, \
                      verbose = 0): 
   re = []
   im = []
-  for x in range(start_cfg, start_cfg+delta_cfg*nb_cfg, delta_cfg):
+  nb_cnfg = 0 
+  for i in range(cnfg_min, cnfg_max+1, 4):
+    pidata = tarfile.open(name_tar)
+    filename = name_file + '%04d.dat' % i
+    if verbose:
+      print 'reading data from:', filename
+    try:
+      data = pidata.extractfile(filename)
+      nb_cnfg += 1
+    except KeyError:
+      print "There is no configuration:", i
+    j = 0
+    for line in data:
+      if j is not 0:
+        segments = line.split()
+        re.append(float(segments[1]))
+        im.append(float(segments[2]))
+      j += 1 # skip first line 
+  print 'total number of files read in:', nb_cnfg
+  corr = [complex(0.0, 0.0)]*nb_cnfg*T
+  t = 0
+  for x, y in zip(re, im):
+    corr[(t%T)*nb_cnfg + t/T] = complex(x, y)
+    t += 1
+  return corr, nb_cnfg
+
+################################################################################
+# extract a correlation function and resorts it
+def extract_corr_fct(name='', cnfg_min=0, cnfg_del=0, nb_cfg=0, T=0, gamma=5,\
+                     verbose = 0): 
+  re = []
+  im = []
+  for x in range(cnfg_min, cnfg_min+cnfg_del*nb_cfg, cnfg_del):
     filename = name + "%04d" % x + '.dat'
     f = open(filename, "rb") # Open a file
     if verbose:

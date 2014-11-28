@@ -1,0 +1,692 @@
+
+
+*******************************************************************************
+Tue Nov 25 11:13:48 2014
+
+
+FIT:    data read from "test.dat" u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 24.0000]
+        #datapoints = 10
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Nov 25 11:14:02 2014
+
+
+FIT:    data read from "test.dat" u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 24.0000]
+        #datapoints = 10
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.64969e+08       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 7.66542
+
+initial set of free parameter values
+
+a               = 430
+m               = 0.22
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 4487.04
+rel. change during last iteration : -4.13495e-14
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 23.6829
+variance of residuals (reduced chisquare) = WSSR/ndf   : 560.88
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Tue Nov 25 11:15:15 2014
+
+
+FIT:    data read from "test.dat" u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 24.0000]
+        #datapoints = 10
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4487.04           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 6.76598
+
+initial set of free parameter values
+
+a               = 5.53952
+m               = 168.082
+
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 4487.04
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 23.6829
+variance of residuals (reduced chisquare) = WSSR/ndf   : 560.88
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Tue Nov 25 11:15:24 2014
+
+
+FIT:    data read from "test.dat" u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 24.0000]
+        #datapoints = 10
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4487.04           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 6.76598
+
+initial set of free parameter values
+
+a               = 5.53952
+m               = 168.25
+
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 4487.04
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 23.6829
+variance of residuals (reduced chisquare) = WSSR/ndf   : 560.88
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Tue Nov 25 11:16:08 2014
+
+
+FIT:    data read from "test.dat" u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 24.0000]
+        #datapoints = 10
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 73.5029           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 863.513
+
+initial set of free parameter values
+
+a               = 430
+m               = 0.22
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 0.000154924
+rel. change during last iteration : -1.1457e-06
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00440062
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.93655e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 431.346          +/- 0.07254      (0.01682%)
+m               = 0.22242          +/- 8.251e-06    (0.00371%)
+
+
+correlation matrix of the fit parameters:
+
+               a      m      
+a               1.000 
+m               0.989  1.000 
+
+
+*******************************************************************************
+Thu Nov 27 11:41:56 2014
+
+
+FIT:    data read from 'test.dat' using 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9701.06           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.358865
+
+initial set of free parameter values
+
+A               = 100
+m               = 0.45
+
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 9685.72
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 37.1978
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1383.67
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Thu Nov 27 12:23:25 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 99.9521
+m               = 59.4692
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:23:33 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 10
+m               = 59.5287
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:23:59 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 1
+m               = 59.5882
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:24:15 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 100
+m               = 59.6478
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:24:30 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 1000
+m               = 59.7075
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:24:46 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 10000
+m               = 59.7672
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:25:17 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 10000
+m               = 59.8269
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:25:24 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 9685.72           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 10
+m               = 59.8868
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:25:32 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 43937.9           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 10
+m               = 59.9467
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:26:39 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 43937.9           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 0.1
+m               = 60.0066
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:26:44 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 43937.9           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 0.01
+m               = 60.0666
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:26:55 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [17.0000 : 23.0000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7098.41           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 0.01
+m               = 60.1267
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:27:00 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [17.0000 : 23.0000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7098.41           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 0.001
+m               = 60.1868
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:27:07 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [17.0000 : 23.0000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7098.41           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 1e+06
+m               = 60.247
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:27:33 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [17.0000 : 23.0000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7098.41           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 1e+06
+m               = 60.3072
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:27:40 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [17.0000 : 23.0000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7098.41           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+A               = 100
+m               = 60.3675
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Thu Nov 27 12:34:00 2014
+
+
+FIT:    data read from 'test.dat' u 1:2
+        format = x:z
+        x range restricted to [17.0000 : 23.0000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Nov 27 12:34:08 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [17.0000 : 23.0000]
+        #datapoints = 7
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Nov 27 12:34:13 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Nov 27 12:35:19 2014
+
+
+FIT:    data read from 'test.dat' u 1:2:4
+        format = x:z:s
+        x range restricted to [15.0000 : 23.0000]
+        #datapoints = 9
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
