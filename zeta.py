@@ -158,11 +158,13 @@ def create_momentum_array(p):
   out = np.asarray(out, dtype=float)
   p += 1
   # these momentum suqares do not exist
-  exclude = [7, 15, 23, 28, 31, 39, 47, 55, 60, 63, 71, 79, 92, 112, 124, 156, \
-             188, 220, 240, 252, 284, 316, 368, 448, 496, 624, 752, 880, 960]
+  exclude = [7, 15, 23, 28, 31, 39, 47, 55, 60, 63, 71, 79, 87, 92, 95, 103, \
+             111, 112, 119, 124, 127, 135, 143, 151, 156, 159, 167, 175, 183,\
+             188, 191, 199, 207, 215, 220, 223, 231, 239, 240, 247, 252, 255,\
+             263, 271, 279, 284, 287, 295]
   if p in exclude:
     p += 1
-  if p > 1007:
+  if p > 302:
     print 'cannot converge, see zeta.py - create_momentum_array'
     exit(0)
   return out, p
@@ -243,7 +245,7 @@ def compute_summands_C(w_sph, w, q, gamma, l, m, d, precision):
     # very high right now with a standard of 1e-12. It should be enough
     # for all comoputations. In doubt, please change it.
     part2.append((scipy.integrate.quadrature(integrand, 0., 1., \
-                  args=(q, l, ww[0]), tol = precision*1e-6, maxiter=1000))[0])
+                  args=(q, l, ww[0]), tol = precision*0.01, maxiter=1000))[0])
   part2 = np.asarray(part2, dtype=float)
   # return the result
   return np.dot(part1, part2)
@@ -323,5 +325,49 @@ def test():
   if delta < 0:
     delta = 180+delta
   print 'delta:', delta, 'delta should be: 128'
+
+################################################################################
+#print '\nTest in cms:'
+#mpi = 0.141485
+#Epipi = 0.2868992
+#L=32
+#gamma=1.
+#q = math.sqrt( (Epipi/2.)**2. - mpi**2.   )*L/(2.*math.pi)
+#Pcm = np.array([0., 0., 0.])
+#gamma = 1.0
+#zeta = Z(q*q, gamma, d = Pcm).real
+#print 'q, gamma, q*cot(delta)/m_pi:', q, gamma, \
+#                                      2.*zeta/(mpi*gamma*L*math.sqrt(math.pi))
+################################################################################
+#
+#
+################################################################################
+print '\nTest in mv1:'
+mpi   = 0.141465078
+Epipi = 0.389590773
+L     = 32
+
+E_nI = math.sqrt(mpi**2. + (2.*math.pi/L)**2) + mpi
+print 'E_non_interacting: ', E_nI
+dcm = np.array([0., 0., 1.])
+Pcm = np.array([0., 0., 1.])*2.*math.pi/L
+E_nI_cm = math.sqrt(E_nI**2.- Pcm.dot(Pcm))
+gamma = E_nI/E_nI_cm
+Epipi_cm_2 = Epipi**2.- Pcm.dot(Pcm)
+gamma = Epipi/math.sqrt(Epipi_cm_2)
+q = (math.sqrt( 0.25*Epipi_cm_2 - mpi**2. ))*L/(2.*math.pi)
+zeta = Z(q*q, gamma, d = dcm).real
+print 'q, gamma, q*cot(delta)/m_pi:', q, gamma, \
+                                      2.*zeta/(mpi*gamma*L*math.pi**(1./2.))
+################################################################################
+
+
+
+
+
+
+
+
+
 
 

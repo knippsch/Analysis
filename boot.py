@@ -9,7 +9,10 @@ import IOcontraction
 def bootstrap(X, bootstrapsize):
   np.random.seed(1227)
   boot = np.empty(bootstrapsize, dtype=float)
-  for i in range(0, bootstrapsize):
+  # writing the mean value in the first sample
+  boot[0] = np.mean(X)
+  # doing all other samples
+  for i in range(1, bootstrapsize):
     rnd = np.random.random_integers(0, high=len(X)-1, size=len(X))
     boot_dummy = 0.0 
     for j in range(0, len(X)):
